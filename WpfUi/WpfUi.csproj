@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <UseWPF>true</UseWPF>
+        <OutputType>WinExe</OutputType>
+        <LangVersion>preview</LangVersion>
+        <ApplicationIcon>wpfui.ico</ApplicationIcon>
+        <TargetFramework>net9.0-windows</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <Resource Include="wpfui.ico"/>
+        <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
+        <PackageReference Include="WPF-UI" Version="4.0.3" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Page Update="App.xaml">
+        <Generator>MSBuild:Compile</Generator>
+        <XamlRuntime>Wpf</XamlRuntime>
+        <SubType>Designer</SubType>
+      </Page>
+    </ItemGroup>
+    
+</Project>
