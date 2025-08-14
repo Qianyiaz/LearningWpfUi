@@ -10,7 +10,7 @@ namespace Wpf.Ui.Views.Pages.ViewModels.Windows;
 public partial class MainWindowViewModel : ObservableObject
 {
     [ObservableProperty] private bool _isChecked;
-    
+
     public MainWindowViewModel()
     {
         ApplicationThemeManager.Changed += (theme, _) =>
@@ -18,7 +18,7 @@ public partial class MainWindowViewModel : ObservableObject
             IsChecked = theme == ApplicationTheme.Dark;
         };
         ApplicationThemeManager.ApplySystemTheme();
-        
+
         var mainClass = (MainWindow)Application.Current.MainWindow;
         mainClass!.Loaded += (_, _) =>
         {
@@ -30,7 +30,7 @@ public partial class MainWindowViewModel : ObservableObject
             mainClass.RootNavigation.SetCurrentValue(NavigationView.IsPaneOpenProperty, e.NewSize.Width > 950);
         };
     }
-    
+
     [RelayCommand]
     private void ChangeTheme() =>
         ApplicationThemeManager.Apply(ApplicationThemeManager.GetAppTheme() == ApplicationTheme.Dark ? ApplicationTheme.Light : ApplicationTheme.Dark);
