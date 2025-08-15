@@ -17,6 +17,7 @@
                 Margin="0,0,0,20"
                 FontTypography="TitleLarge"
                 FontSize="60"
+                TextWrapping="WrapWithOverflow"
                 Text="This is HomePage." />
 
             <ui:Button
