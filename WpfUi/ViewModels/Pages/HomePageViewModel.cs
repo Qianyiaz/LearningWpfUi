@@ -8,7 +8,7 @@ namespace WpfUi.ViewModels.Pages;
 public partial class HomePageViewModel : ObservableObject
 {
     [RelayCommand]
-    private void NavigateToSetting()
+    private static void NavigateToSetting()
     {
         var mainClass = (MainWindow)Application.Current.MainWindow;
         mainClass!.RootNavigation.Navigate("Setting");

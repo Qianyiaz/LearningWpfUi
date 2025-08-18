@@ -7,6 +7,8 @@
     xmlns:vm="clr-namespace:Wpf.Ui.Views.Pages.ViewModels.Windows"
 
     ExtendsContentIntoTitleBar="True"
+    Loaded="OnLoaded"
+    WindowBackdropType="Mica"
     Title="MainWindow" >
     
     <ui:FluentWindow.DataContext>
