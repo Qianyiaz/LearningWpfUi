@@ -3,7 +3,7 @@ permissions:
   contents: write
 on:
   push:
-    paths: ['cat2/**','**/Format.yml']
+    paths: ['WpfUi/**','**/Format.yml']
 jobs:
   dotnet-format:
     runs-on: windows-latest
