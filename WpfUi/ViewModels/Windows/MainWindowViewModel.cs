@@ -6,6 +6,7 @@ namespace Wpf.Ui.Views.Pages.ViewModels.Windows;
 
 public partial class MainWindowViewModel : ObservableObject
 {
+    [ObservableProperty] private string _assemblyName = "Wpf Ui";
     [ObservableProperty] private bool _isChecked;
 
     [RelayCommand]

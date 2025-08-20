@@ -1,0 +1,28 @@
+<Page x:Class="Wpf.Ui.Views.Pages.Page1"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+      xmlns:vm="clr-namespace:Wpf.Ui.ViewModels.Pages">
+      
+      <Page.DataContext>
+            <vm:Page1ViewModel/>
+      </Page.DataContext>
+      
+      <ui:Card
+            Padding="25"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center">
+            <StackPanel>
+                  <ui:TextBlock
+                        Margin="0,0,0,20"
+                        FontTypography="TitleLarge"
+                        FontSize="60"
+                        TextWrapping="WrapWithOverflow"
+                        Text="This is Page1." />
+                  
+                  <ui:AutoSuggestBox 
+                        OriginalItemsSource="{Binding AutoSuggestBoxSuggestions}"
+                        PlaceholderText="Search..."/>
+            </StackPanel>
+      </ui:Card>
+</Page>

@@ -7,9 +7,9 @@
     xmlns:vm="clr-namespace:Wpf.Ui.Views.Pages.ViewModels.Windows"
 
     ExtendsContentIntoTitleBar="True"
-    Loaded="OnLoaded"
     WindowBackdropType="Mica"
-    Title="MainWindow" >
+    Title="{Binding AssemblyName}"
+    Loaded="OnLoaded">
     
     <ui:FluentWindow.DataContext>
         <vm:MainWindowViewModel/>
@@ -23,7 +23,7 @@
         </Grid.RowDefinitions>
         
         <ui:TitleBar
-            Title="MainWindow">
+            Title="{Binding AssemblyName}">
             <ui:TitleBar.Icon>
                 <ui:ImageIcon
                     Source="pack://application:,,,/wpfui.ico" />
@@ -50,6 +50,11 @@
                     NavigationCacheMode="Required"
                     TargetPageType="{x:Type pages:HomePage}"
                     Icon="{ui:SymbolIcon Home48}" />
+                <ui:NavigationViewItem
+                    Content="Page1"
+                    NavigationCacheMode="Required"
+                    TargetPageType="{x:Type pages:Page1}"
+                    Icon="{ui:SymbolIcon DocumentOnePage24}" />
             </ui:NavigationView.MenuItems>
             
             <ui:NavigationView.FooterMenuItems>
