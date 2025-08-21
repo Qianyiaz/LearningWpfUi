@@ -5,6 +5,7 @@
     xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
     xmlns:pages="clr-namespace:Wpf.Ui.Views.Pages"
     xmlns:vm="clr-namespace:Wpf.Ui.Views.Pages.ViewModels.Windows"
+    xmlns:tray="http://schemas.lepo.co/wpfui/2022/xaml/tray"
 
     ExtendsContentIntoTitleBar="True"
     WindowBackdropType="Mica"
@@ -22,7 +23,23 @@
             <RowDefinition />
         </Grid.RowDefinitions>
         
+        <tray:NotifyIcon
+            Grid.Row="0"
+            FocusOnLeftClick="True"
+            Icon="pack://application:,,,/wpfui.ico"
+            MenuOnRightClick="True"
+            TooltipText="{Binding AssemblyName}">
+            <tray:NotifyIcon.Menu>
+                <ContextMenu>
+                    <ui:MenuItem 
+                        Icon="{ui:SymbolIcon ArrowAutofitHeight24}"
+                        Header="Click Me!"/>
+                </ContextMenu>
+            </tray:NotifyIcon.Menu>
+        </tray:NotifyIcon>
+        
         <ui:TitleBar
+            Grid.Row="0"
             Title="{Binding AssemblyName}">
             <ui:TitleBar.Icon>
                 <ui:ImageIcon
@@ -51,10 +68,17 @@
                     TargetPageType="{x:Type pages:HomePage}"
                     Icon="{ui:SymbolIcon Home48}" />
                 <ui:NavigationViewItem
-                    Content="Page1"
+                    Content="Pages"
                     NavigationCacheMode="Required"
-                    TargetPageType="{x:Type pages:Page1}"
-                    Icon="{ui:SymbolIcon DocumentOnePage24}" />
+                    Icon="{ui:SymbolIcon DocumentOnePage24}">
+                    <ui:NavigationViewItem.MenuItems>
+                        <ui:NavigationViewItem
+                            Content="Page1"
+                            NavigationCacheMode="Required"
+                            TargetPageType="{x:Type pages:Page1}"
+                            Icon="{ui:SymbolIcon CalculatorArrowClockwise24}"/>
+                    </ui:NavigationViewItem.MenuItems>
+                </ui:NavigationViewItem>
             </ui:NavigationView.MenuItems>
             
             <ui:NavigationView.FooterMenuItems>
