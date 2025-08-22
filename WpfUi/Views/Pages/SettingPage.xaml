@@ -13,7 +13,7 @@
                 FontSize="60"
                 TextWrapping="WrapWithOverflow"
                 Text="This is SettingPage." />
-            
+
             <ui:TextBox
                 PlaceholderText="Please enter any text." />
         </StackPanel>

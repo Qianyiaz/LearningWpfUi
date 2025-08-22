@@ -10,6 +10,10 @@ public partial class MainWindowViewModel : ObservableObject
     [ObservableProperty] private bool _isChecked;
 
     [RelayCommand]
-    private void ChangeTheme() =>
-        ApplicationThemeManager.Apply(ApplicationThemeManager.GetAppTheme() == ApplicationTheme.Dark ? ApplicationTheme.Light : ApplicationTheme.Dark);
+    private void ChangeTheme()
+    {
+        ApplicationThemeManager.Apply(ApplicationThemeManager.GetAppTheme() == ApplicationTheme.Dark
+            ? ApplicationTheme.Light
+            : ApplicationTheme.Dark);
+    }
 }

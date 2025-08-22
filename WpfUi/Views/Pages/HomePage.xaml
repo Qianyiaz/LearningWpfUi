@@ -3,11 +3,11 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
       xmlns:vm="clr-namespace:WpfUi.ViewModels.Pages">
-    
+
     <Page.DataContext>
-        <vm:HomePageViewModel/>
+        <vm:HomePageViewModel />
     </Page.DataContext>
-    
+
     <ui:Card
         Padding="25"
         HorizontalAlignment="Center"

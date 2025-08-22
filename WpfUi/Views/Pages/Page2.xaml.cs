@@ -1,8 +1,8 @@
 namespace Wpf.Ui.Views.Pages;
 
-public partial class Page1
+public partial class BrowserPage
 {
-    public Page1()
+    public BrowserPage()
     {
         InitializeComponent();
     }
