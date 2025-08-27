@@ -5,7 +5,8 @@ namespace Wpf.Ui.ViewModels.Pages;
 
 public partial class Page1ViewModel : ObservableObject
 {
-    [ObservableProperty] private List<string> _autoSuggestBoxSuggestions =
+    [ObservableProperty]
+    private List<string> _autoSuggestBoxSuggestions =
     [
         "The cake is lie.",
         "It's so boring.",
