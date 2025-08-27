@@ -7,8 +7,10 @@ namespace Wpf.Ui.Views.Windows;
 
 public partial class MainWindow
 {
-    public MainWindow() =>
+    public MainWindow()
+    {
         InitializeComponent();
+    }
 
     private void OnLoaded(object sender, RoutedEventArgs e)
     {

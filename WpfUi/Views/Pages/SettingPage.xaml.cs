@@ -2,6 +2,8 @@ namespace Wpf.Ui.Views.Pages;
 
 public partial class SettingPage
 {
-    public SettingPage() =>
+    public SettingPage()
+    {
         InitializeComponent();
+    }
 }
