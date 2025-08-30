@@ -23,7 +23,7 @@ public partial class Page2ViewModel : ObservableObject
     {
         InputUrl = value;
     }
-    
+
     [RelayCommand]
     private void Search()
     {

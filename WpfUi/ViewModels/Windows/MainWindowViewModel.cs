@@ -10,7 +10,7 @@ public partial class MainWindowViewModel : ObservableObject
     {
         ApplicationThemeManager.Changed += (theme, _) => IsChecked = theme == ApplicationTheme.Dark;
     }
-    
+
     [ObservableProperty] private string _assemblyName = "Wpf Ui";
     [ObservableProperty] private bool _isChecked;
 
