@@ -10,7 +10,7 @@ public partial class Page2ViewModel : ObservableObject
     [ObservableProperty] private Visibility _cardVisibility = Visibility.Visible;
 
     [ObservableProperty]
-    private string _inputUrl = "https://learn.microsoft.com/zh-cn/microsoft-edge/webview2/get-started/wpf";
+    private string _inputUrl = "https://learn.microsoft.com/microsoft-edge/webview2/get-started/wpf";
 
     [ObservableProperty] private string _url;
 
@@ -23,12 +23,15 @@ public partial class Page2ViewModel : ObservableObject
     {
         InputUrl = value;
     }
-
-    partial void OnInputUrlChanged(string value)
+    
+    [RelayCommand]
+    private void Search()
     {
-        if (Uri.TryCreate(value, UriKind.Absolute, out var uriResult)
+        if (Uri.TryCreate(InputUrl, UriKind.Absolute, out var uriResult)
             && (uriResult.Scheme == Uri.UriSchemeHttp || uriResult.Scheme == Uri.UriSchemeHttps))
-            Url = value!;
+            Url = InputUrl!;
+        else
+            Url = $"https://www.bing.com/search?q={InputUrl}";
     }
 
     [RelayCommand]

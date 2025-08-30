@@ -8,42 +8,58 @@
     <Page.DataContext>
         <pages:Page2ViewModel />
     </Page.DataContext>
-    
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition 
-                    Height="Auto"/>
-                <RowDefinition 
-                    Height="Auto"/>
-                <RowDefinition />
-            </Grid.RowDefinitions>
-            <ui:CardControl
-                Margin="8,8,8,0"
-                Visibility="{Binding CardVisibility}">
-                <ui:CardControl.Header>
-                    <ui:TextBlock
-                        Margin="15,0,0,0"
-                        FontTypography="Subtitle"
-                        Text="A simple browser" />
-                </ui:CardControl.Header>
-                <ui:Button
-                    Command="{Binding HideCommand}">
-                    <ui:Button.Icon>
-                        <ui:SymbolIcon
-                            FontSize="20"
-                            Symbol="Dismiss48" />
-                    </ui:Button.Icon>
-                </ui:Button>
-            </ui:CardControl>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition
+                Height="Auto" />
+            <RowDefinition
+                Height="Auto" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <ui:CardControl
+            Margin="8,8,8,0"
+            Visibility="{Binding CardVisibility}">
+            <ui:CardControl.Header>
+                <ui:TextBlock
+                    Margin="15,0,0,0"
+                    FontTypography="Subtitle"
+                    Text="A simple browser" />
+            </ui:CardControl.Header>
+            <ui:Button
+                Command="{Binding HideCommand}">
+                <ui:Button.Icon>
+                    <ui:SymbolIcon
+                        FontSize="20"
+                        Symbol="Dismiss48" />
+                </ui:Button.Icon>
+            </ui:Button>
+        </ui:CardControl>
+        <Grid 
+            Margin="0,0,0,8"
+            Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition 
+                    Width="Auto"/>
+            </Grid.ColumnDefinitions>
             <ui:TextBox
-                Grid.Row="1"
+                Grid.Column="0"
+                Margin="8,8,0,0"
+                Text="{Binding InputUrl,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                PlaceholderText="Search for anything..." />
+            <ui:Button
+                Grid.Column="1" 
                 Icon="{ui:SymbolIcon Search48}"
                 Margin="8,8,8,0"
-                Text="{Binding InputUrl,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
-                PlaceholderText="Search..." />
-            <wv2:WebView2
-                Grid.Row="2"
-                Margin="8,0,8,8"
-                Source="{Binding Url,Mode=TwoWay}" />
+                Padding="10,8,10,8"
+                FontSize="16"
+                Command="{Binding SearchCommand}"
+                Content="Search"/>
         </Grid>
+        <wv2:WebView2
+            Grid.Row="2"
+            Margin="8,0,8,8"
+            Source="{Binding Url,Mode=TwoWay}" />
+    </Grid>
 </Page>

@@ -10,6 +10,7 @@
     ExtendsContentIntoTitleBar="True"
     WindowBackdropType="Mica"
     Title="{Binding AssemblyName}"
+    SizeChanged="OnSizeChanged"
     Loaded="OnLoaded">
 
     <ui:FluentWindow.DataContext>

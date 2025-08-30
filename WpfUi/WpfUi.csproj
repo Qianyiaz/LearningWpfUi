@@ -10,9 +10,9 @@
 
     <ItemGroup>
         <Resource Include="wpfui.ico"/>
-        <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.3405.78" />
-        <PackageReference Include="WPF-UI.Tray" Version="4.0.3" />
-        <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
+        <PackageReference Include="WPF-UI.Tray" Version="*" />
+        <PackageReference Include="CommunityToolkit.Mvvm" Version="*" />
+        <PackageReference Include="Microsoft.Web.WebView2" Version="*" />
     </ItemGroup>
     
 </Project>
